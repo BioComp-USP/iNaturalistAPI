@@ -144,6 +144,18 @@
               "is_active": true
             }
           }
+        },
+        {
+          "id": 104,
+          "current": true,
+          "taxon_change": {
+            "id": 1,
+            "type": "TaxonSwap"
+          },
+          "taxon": {
+            "id": 10002,
+            "ancestor_ids": [10002]
+          }
         }
       ]
     },
@@ -162,6 +174,20 @@
           "id": 1,
           "user": { "id": 123 },
           "created_at": "2015-12-31T00:00:00",
+          "identifications": [
+            {
+              "id": 102,
+              "taxon_id": 5,
+              "user": { "id": 123 },
+              "body": "id1"
+            },
+            {
+              "id": 103,
+              "taxon_id": 5,
+              "user": { "id": 5 },
+              "body": "id2"
+            }
+          ],
           "ofvs": [ {
             "name_ci": "Habitat",
             "value_ci": "marine"
@@ -175,6 +201,13 @@
             "rank_level": 10
           },
           "project_ids": [ 543 ],
+          "project_observations": [
+            {
+              "id": 909090,
+              "uuid": "07e60a0a-db6d-48b1-8424-5d5c3f9d2bc3",
+              "project_id": 543
+            }
+          ],
           "private_geojson": { "type": "Point", "coordinates": [ "2", "1" ] }
         },
         {
@@ -187,7 +220,7 @@
             "ancestor_ids": [1,2,3,4],
             "min_species_ancestry": "1,2,3,4"
           },
-          "non_owner_ids":[{ "user": { "id": 123 } }],
+          "identifications":[{ "user": { "id": 123 }, "own_observation": false }],
           "place_guess": "Montana",
           "private_geojson": { "type": "Point", "coordinates": [ "3", "2" ] }
         },
@@ -211,12 +244,14 @@
             "min_species_ancestry": "11,22,33,123",
             "rank_level": 10
           },
-          "sounds": {
-            "id": 1,
-            "license_code": "CC-BY",
-            "attribution": "Slartibartfast",
-            "native_sound_id": 123
-          }
+          "sounds": [
+            {
+              "id": 1,
+              "license_code": "CC-BY",
+              "attribution": "Slartibartfast",
+              "native_sound_id": 123
+            }
+          ]
         },
         {
           "id": 5,
@@ -305,7 +340,10 @@
               "id": 101,
               "user_id": 1,
               "uuid": "8cf0282d-c6f3-4947-9905-4937def371f4",
-              "project_id": 1
+              "project_id": 1,
+              "preferences": [
+                { "name": "curator_coordinate_access", "value": true }
+              ]
             }
           ]
         },
@@ -321,7 +359,10 @@
               "id": 111,
               "user_id": 1,
               "uuid": "902996e7-6d0d-40b8-9dc7-1384d0bc2ec7",
-              "project_id": 2
+              "project_id": 2,
+              "preferences": [
+                { "name": "curator_coordinate_access", "value": false }
+              ]
             }
           ]
         }
@@ -344,6 +385,14 @@
           "title_exact": "Project Two",
           "location": "21,22",
           "user_ids": [ 123 ]
+        },
+        {
+          "id": 543,
+          "title": "A Project",
+          "title_autocomplete": "A Project",
+          "title_exact": "A Project",
+          "location": "22,33",
+          "user_ids": [ 6 ]
         }
       ]
     },
@@ -432,6 +481,11 @@
               { "place_id": 111 }
             ] },
             { "name": "BestInCalifornia", "locale": "en", "place_taxon_names": [
+              { "place_id": 222 } ] },
+            { "name": "BestInAmericaES", "locale": "es", "place_taxon_names": [
+              { "place_id": 111 }
+            ] },
+            { "name": "BestInCaliforniaES", "locale": "es", "place_taxon_names": [
               { "place_id": 222 } ] } ],
           "statuses": [
             { "place_id": null, "iucn": 20 },
@@ -454,6 +508,10 @@
         {
           "id": 10001,
           "name": "DetailsTaxon"
+        },
+        {
+          "id": 10002,
+          "name": "Taxon for a swap"
         }
       ]
     },
@@ -609,6 +667,11 @@
       }
     ],
     "places": [
+      {
+        "id": 222,
+        "name": "California",
+        "ancestry": "111/222"
+      },
       {
         "id": 432,
         "name": "a-place",
@@ -783,6 +846,13 @@
         "name": "A User",
         "icon_content_type": "image/jpeg",
         "icon_file_name": "img.jpg"
+      },
+      {
+        "id": 124,
+        "login": "es-user",
+        "name": "ES User",
+        "locale": "es",
+        "place_id": 222
       }
     ],
     "taxa": [
