@@ -156,6 +156,44 @@
             "id": 10002,
             "ancestor_ids": [10002]
           }
+        },
+        {
+          "id": 105,
+          "user": {
+            "id": 1234
+           },
+          "body": "id1",
+          "category": "leading",
+          "current": true,
+          "current_taxon": true,
+          "taxon": {
+            "id": 5,
+            "is_active": true,
+            "iconic_taxon_id": 1,
+            "ancestor_ids": [1,2,3,4,5],
+            "min_species_ancestry": "1,2,3,4,5",
+            "rank_level": 10,
+            "rank": "species",
+             "min_species_ancestors": [
+              { "id": 1 }, { "id": 2 }, { "id": 3 }, { "id": 4 }, { "id": 5 }
+            ]
+         },
+          "observation": {
+            "id": 1,
+            "user": {
+              "id": 1234
+            },
+            "quality_grade": "casual",
+            "captive": true,
+            "taxon": {
+              "id": 5,
+              "iconic_taxon_id": 1,
+              "ancestor_ids": [1,2,3,4,5],
+              "min_species_ancestry": "1,2,3,4,5",
+              "rank_level": 10,
+              "rank": "species"
+            }
+          }
         }
       ]
     },
@@ -365,6 +403,48 @@
               ]
             }
           ]
+        },
+        {
+          "id": 12,
+          "user": { "id": 5 },
+          "identifications": [
+            {
+              "id": 121,
+              "user": {
+                "id": 121,
+                "login": "user121"
+              },
+              "taxon": {
+                "id": 1
+              }
+            },
+            {
+              "id": 122,
+              "user": {
+                "id": 122,
+                "login": "user122"
+              },
+              "taxon": {
+                "id": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "user": { "id": 5 },
+          "identifications": [
+            {
+              "id": 121,
+              "user": {
+                "id": 121,
+                "login": "user121"
+              },
+              "taxon": {
+                "id": 1
+              }
+            }
+          ]
         }
       ]
     },
@@ -465,7 +545,11 @@
         {
           "id": 5,
           "iconic_taxon_id": 101,
-          "is_active": true
+          "is_active": true,
+          "ancestor_ids": [1,2,3,4,5],
+          "min_species_ancestry": "1,2,3,4,5",
+          "rank_level": 10,
+          "rank": "species"
         },
         {
           "id": 6,
@@ -507,11 +591,25 @@
         },
         {
           "id": 10001,
-          "name": "DetailsTaxon"
+          "name": "DetailsTaxon",
+          "ancestor_ids": [ 10001 ]
         },
         {
           "id": 10002,
           "name": "Taxon for a swap"
+        },
+        {
+          "id": 7,
+          "name": "Los",
+          "parent_id": 1,
+          "ancestor_ids": [ 1001, 1, 2 ],
+          "names": [{
+            "name_autocomplete": "Los",
+            "exact": "Los",
+            "exact_ci": "Los"
+          }],
+          "observations_count": 50,
+          "is_active": true
         }
       ]
     },
