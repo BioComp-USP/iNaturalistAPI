@@ -599,6 +599,23 @@
           "name": "Taxon for a swap"
         },
         {
+          "id": 10003,
+          "name": "Inactive, replaced by 123",
+          "is_active": false,
+          "current_synonymous_taxon_ids": [123]
+        },
+        {
+          "id": 10004,
+          "name": "Inactive, unreplaced",
+          "is_active": false
+        },
+        {
+          "id": 10005,
+          "name": "Inactive, replaced by 1 and 2",
+          "is_active": false,
+          "current_synonymous_taxon_ids": [1,2]
+        },
+        {
           "id": 7,
           "name": "Los",
           "parent_id": 1,
@@ -856,6 +873,18 @@
         "slug": "project-two",
         "title": "Project Two",
         "user_id": 123
+      }
+    ],
+    "roles": [
+      {
+        "id": 1,
+        "name": "admin"
+      }
+    ],
+    "roles_users": [
+      {
+        "user_id": 1,
+        "role_id": 1
       }
     ],
     "rules": [
